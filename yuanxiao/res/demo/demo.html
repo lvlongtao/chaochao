@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<style type="text/css">
+body {background-color: #000;}
+.ball-cont {width: 100px; height: 100px; overflow: hidden; border-radius: 50%;}
+.ball {width: 100%; height: 100%; background: url(ball.png) no-repeat; background-size: 200% 100%;}
+</style>
+</head>
+<body>
+	<div class="ball-cont"><div class="ball"></div></div>    
+</body>
+<script type="text/javascript" src="jquery-2.2.0.js"></script>
+<script type="text/javascript">
+$.extend($.easing, {
+	easeOutCubic: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t + 1) + b;
+	},
+	easeOutQuad: function (x, t, b, c, d) {
+		return -c *(t/=d)*(t-2) + b;
+	},
+	easeOutQuart: function (x, t, b, c, d) {
+		return -c * ((t=t/d-1)*t*t*t - 1) + b;
+	},
+	easeOutQuint: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t*t*t + 1) + b;
+	},
+	easeOutExpo: function (x, t, b, c, d) {
+		return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
+	}
+});
+
+$(window).on('load', function(){
+	var $ball = $('.ball');
+
+	var j = 0;
+
+	var duration = 6460;
+	var anidist = Math.round(duration / 10),
+		i = 0, prev = 0, bp = 1;
+
+	$ball.animate({
+		"_temp": '+=' + anidist
+	}, {
+		step: function(now, fx){
+			i ++;
+			var t = Math.round(now);
+			if( i % 3 == 0 ){
+				if( t > prev ){
+					$(fx.elem).css({"background-position": (bp == 1 ? "100%" : "0") + " 0"});
+					bp = Math.abs(bp - 1);
+					prev = t;
+				}
+				j ++;
+			}
+		},
+		easing: 'easeOutQuart',
+		duration: duration,
+		complete: function(){
+			console.log(duration / j, j);
+		}
+	});
+});
+</script>
+</html>

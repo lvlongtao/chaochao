@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jwtextureswim-可制作背景图片动画的jQuery插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<!-- Bootstrap -->
+	  <link rel="stylesheet" href="css/bootstrap.min.css">
+	  <!-- Style -->
+	  <link rel="stylesheet" href="css/jwtextureswim.css">
+	  <link rel="stylesheet" href="prism/prism.css">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>jwtextureswim-可制作背景图片动画的jQuery插件 <span>A jQuery Plugin To Animate Background Images </span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/jQuery/Image-Effects/201507142226.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<div class="container">
+			<div class = "row">
+			    <div class = "col-sm-12">
+				  <p>...You should see movement!</p>
+				  <div id = "anim1" class = "checker">Scroll......</div>
+				  <p>That's how to animate background images using jQuery and jwTextureSwim. As easy as that. But, what if you want to <em>swim</em> multiple 
+				  elements at the same time?</p>
+				</div>
+			  </div>
+			  <div class = "row">
+	    <div class = "col-sm-12">
+		  <h2 id = "multiple-elements">Multiple Elements</h2>
+		  <p>As quickly as you were able to setup and swim your first element, it's just as intuitive to do the same for multiple elements. Add a couple of new <code>div</code>s to your <code>HTML</code>, and give one of them a different class name.</p>
+		  <p>For those using my <code>CSS</code>, you can use <code>.checker</code> and <code>.chess</code>. (Also, you can add <code>.third</code> to
+		  fit them shoulder-to-shoulder.)</p>
+		  <span class = "med">(HTML)</span>
+		  <pre><code class="language-markup">
+// Head + Body
+
+&lt;!--------------------------------------------&gt;
+&lt;!------------- New Div Setup ----------------&gt;
+&lt;!--------------------------------------------&gt;
+&lt;div class=&quot;checker third&quot;&gt;Checkers...&lt;/div&gt;
+&lt;div class=&quot;chess third&quot;&gt;Chess...&lt;/div&gt;
+&lt;div class=&quot;checker third&quot;&gt;Checkers...&lt;/div&gt;
+
+// Scripts</code></pre>
+          <p>And update your <code>&lt;script&gt;</code> with the new class. <u>It's ok to share the same call!</u></p>
+          <span class = "med">(jQuery)</span>
+		  <pre><code class="language-markup">
+&lt;script type = &quot;text/javascript&quot;&gt;
+  $(&quot;.checker, .chess&quot;).textureSwim();
+&lt;/script&gt;</code></pre>
+          <p>You're starting to see the picture...</p>
+		  <div class = "checker trois third">Checkers......</div>		  
+		  <div class = "chess trois third">Chess......</div>		  
+		  <div class = "checker trois third">Checkers......</div>		  
+		</div>
+	  </div>
+
+	  <div class = "row">
+	    <div class = "col-sm-12">
+		  <h2 id = "multiple-directions">Animate Texture Backgrounds in X and Y Directions </h2>
+          <p>So your background textures are animating thanks to a little jQuery and jwTextureSwim, but you want more than a scroll to the right, right?
+		  Let's change the direction of some of the elements.</p>
+		  <p>First, give <b>each</b> of our 3 elements its own, distinct <code>id</code>: something like <code>d1</code>, <code>d2</code>, and <code>d3</code>.</p>
+		  <pre><code class="language-markup">
+// Head + Body
+
+&lt;!--------------------------------------------&gt;
+&lt;!------------- Add Unique IDs ---------------&gt;
+&lt;!--------------------------------------------&gt;
+&lt;div id="d1" class=&quot;checker third&quot;&gt;Checkers...&lt;/div&gt;
+&lt;div id="d2" class=&quot;chess third&quot;&gt;Chess...&lt;/div&gt;
+&lt;div id="d3" class=&quot;checker third&quot;&gt;Checkers...&lt;/div&gt;
+
+// Scripts</code></pre>
+
+          <p>Next, we need to change the directions. By default, jwTextureSwim uses a <code>distanceX</code> of <b>500px</b> (moves to the right on the X-axis) and a <code>distanceY</code> of <b>0px</b> (does not move vertically on the Y-axis) over a <code>duration</code> of 5000ms (5 seconds). But let's change all that!</p>
+		  <pre><code class="language-markup">
+&lt;script type = &quot;text/javascript&quot;&gt;
+  // $(&quot;.checker, .chess&quot;).textureSwim(); // No longer needed
+  $(&quot;#d1&quot;).textureSwim({distanceX: -500});
+  $(&quot;#d2&quot;).textureSwim({distanceY: 200});
+  $(&quot;#d3&quot;).textureSwim({distanceX: -300, distanceY: -200});
+&lt;/script&gt;</code></pre>
+		  <div id = "d1" class = "checker third">Checkers......</div>		  
+		  <div id = "d2" class = "chess third">Chess......</div>		  
+		  <div id = "d3" class = "checker third">Checkers......</div>
+		</div>
+	  </div>
+	  
+	  <div class = "row">
+	    <div class = "col-xs-12">
+		  <h2 id = "get-creative">Get Creative!</h2>
+		  With a little creativity, you can use jwTextureSwim to make some impressive elements throughout your website with minimal effort. 
+		</div>
+		<div id = "mountain" class = "col-xs-12">
+		  <div id = "snow">
+		    Get Creative.<br />
+			<pre class = "left">&lt;div id = &quot;mountain&quot;&gt;
+  &lt;div id = &quot;snow&quot;&gt;
+	Get Creative.
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+            <pre class = "right">$("#mountain").textureSwim({
+  duration: 20000
+});
+$("#snow").textureSwim({
+  distanceX: 3000, distanceY: 700, duration: 2000
+});</pre>
+            <div class = "clear"></div>
+		  </div>
+		</div>
+		
+		<div id = "mountain-bright" class = "col-xs-12">
+		  <div id = "rain">
+		    Get Creative.<br />
+			<pre class = "left">&lt;div id = &quot;mountain-bright&quot;&gt;
+  &lt;div id = &quot;rain&quot;&gt;
+	Get Creative.
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+            <pre class = "right">$("#mountain-bright").textureSwim({
+  duration: 20000
+});
+$("#rain").textureSwim({
+  distanceX: 5000, distanceY: 2700, duration: 200
+});</pre>
+            <div class = "clear"></div>
+		  </div>
+		</div>		
+	  </div><!-- Row -->
+
+		</div>
+		<!-- <div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/html5/SVG/201506232091.html">
+			  <img src="related/1.jpg" width="300" alt="HTML5 SVG超酷雷达扫描式页面切换特效"/>
+			  <h3>HTML5 SVG超酷雷达扫描式页面切换特效</h3>
+			</a>
+			<a href="http://www.htmleaf.com/jQuery/Layout-Interface/201506132027.html">
+			  <img src="related/2.jpg" width="300" alt="jQuery和CSS3超炫3D整屏垂直滚动页面特效"/>
+			  <h3>jQuery和CSS3超炫3D整屏垂直滚动页面特效</h3>
+			</a>
+		</div> -->
+	</div>
+	
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jwtextureswim-1.0.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".trois").textureSwim();
+			$("#d1").textureSwim({distanceX: -500});
+      		$("#d2").textureSwim({distanceY: 200});
+      		$("#d3").textureSwim({distanceX: -300, distanceY: -200});
+      		$("#snow").textureSwim({distanceX: 3000, distanceY: 700, duration: 2000});
+	  		$("#rain").textureSwim({distanceX: 5000, distanceY: 2700, duration: 200});
+	  		$('#anim1').textureSwim({repeat:0, ease: 'easeOutQuad'});
+		});
+	</script>
+</body>
+</html>

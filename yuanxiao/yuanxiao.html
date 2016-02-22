@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/yuanxiao.css" />
+</head>
+
+<body>
+
+<div class="wrapper">
+	<div class="container">
+		<div class="bg">
+			<div class="bottom"><img src="images/btm.png"></div>
+			<div class="rule"></div>
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+		<div class="cover"><img src="images/title.png">
+			<!-- <a href="javascript:;" class="ranking"><img src="images/ranking.png"></a> -->
+		</div>
+		<div class="ball-cont"><div class="ball"></div>
+			<img src="images/start.png" class="start">
+		</div>
+	</div>
+</div>
+
+<div class="overlay">
+	<div class="tips content">
+		<h2>游戏规则：</h2>
+		<p>1、每人每天限3次机会，好好把握哟。</p>
+		<p>2、炫耀朋友圈再得2次机会。</p>
+	</div>
+	<div class="share">
+		<style type="text/css">
+		#shareTipDiv {position:absolute;top:0;bottom:0;background:rgba(0,0,0,0.7);}
+		#shareTipImgDiv {margin-left:50%;margin-top:5%;width:40%;}
+		#shareTipDiv img {display:block;width:100%;}
+		</style>
+		<div id="shareTipDiv">
+			<div id="shareTipImgDiv">
+				<img alt="" src="images/shareTip.png">
+			</div>
+		</div>
+	</div>
+	<div class="confirm">
+		<div class="content">
+			<h2></h2>
+			<p>炫耀朋友圈再得2次机会！</p>
+		</div>
+		<div class="button button2">
+			<span class="btn-reset">再来一次</span>
+			<span class="btn-share not-hide">分享</span>
+		</div>
+	</div>
+	<div class="qrcode">
+		<div class="content">
+			<img src="images/dyhQRCode.jpg">
+			<h2 style="text-align:center;">请先关注人人信<br>(长按二维码即可关注)</h2>
+		</div>
+	</div>
+</div>
+
+<!-- <div class="log"></div> -->
+
+</body>
+
+<!--
+<script type="text/javascript" src="js/require.js"></script>
+<script type="text/javascript">
+require(['js/yuanxiao.js?_=' + Date.now()], function(yuanxiao){
+	yuanxiao.init({
+		imagesLoad: ['images/btm.png', 'images/title.png', 'images/bg.jpg', 'images/ball.png', 'images/gift1.png', 'images/gift2.png', 'images/gift3.png', 'images/gift4.png', 'images/start.png', 'images/ranking.png'],
+		subscribe: false,
+		rollEnd: function(distance){
+
+		}
+	});
+});
+</script>
+-->
+<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="js/pxloader-images.min.js"></script>
+<script type="text/javascript" src="js/yuanxiao.js"></script>
+<script type="text/javascript">
+	yuanxiao.init({
+		imagesLoad: ['images/btm.png', 'images/title.png', 'images/bg.jpg', 'images/ball.png', 'images/gift1.png', 'images/gift2.png', 'images/gift3.png', 'images/gift4.png', 'images/start.png', 'images/ranking.png'],
+		subscribe: (typeof(subscribe) != 'undefined' ? subscribe : true),
+		rollEnd: function(distance){
+
+		}
+	});
+</script>
+</html>

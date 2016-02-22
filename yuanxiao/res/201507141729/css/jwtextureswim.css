@@ -1,0 +1,84 @@
+html, body{
+  background-color: white;
+  font-family: 'Raleway', sans-serif;  
+  height: 100%;
+}
+
+.clear{clear: both;}
+.left{float: left;}
+.right{float: right;}
+
+h1{font-family: 'Courgette', cursive; font-size: 5.0em;}
+h2, .med{font-family: 'Montserrat', sans-serif;}
+h2{font-size: 3.0em; margin-top: .5em;}
+.med{font-size: 2.0em;}
+
+/*Mobile*/
+@media (max-width: 1024px){
+  h1{font-family: 'Courgette', cursive; font-size: 3.0em;}
+  h2, .med{font-family: 'Montserrat', sans-serif;}
+  h2{font-size: 2.0em; margin-top: .5em;}
+  .med{font-size: 1.4em;}
+}
+
+p{margin: 10px 0px !important;}
+
+.btn{background: url('../images/arrows.png') #111; background-size: contain; border: solid 2px #EFEFEF; color: #EFEFEF !important; font-weight: bold;}
+.btn:hover{background-color: #00557C; color: #EFEFEF;}
+
+pre code{margin: 20px 0px;}
+section{padding: 50px 0px;}
+section#main{padding: 0px; background-image: url('../images/arrows.png'); background-size: 500px; height: 100%; min-height: 100%;}
+/*Mobile*/
+@media (max-width: 1024px){
+  section#main{height: auto; min-height: 10px;}
+}
+
+.bgfade{min-height: 100%; background-color: rgba(0, 0, 0, .9);}
+#main-title{padding: 50px 0px;}
+#arrow{max-height: 500px; max-width: 100%;}
+.dark{background-color: #222; color: #EFEFEF;}
+.def a, .def:visited, .dark a.def, .dark a.def:visited{color: #EFEFEF;}
+
+#get-files img{width: 30%; border: solid 2px rgba(255, 255, 255, 0);}
+
+#tutorial-column{padding-left: 0px;}
+
+.checker{background: url('../images/checker_bg.png') white; font-size: 2.0em; text-align: center; padding: 50px 0px; color: #222;}
+.chess{background: url('../images/chess_bg.jpg') white; font-size: 2.0em; text-align: center; padding: 50px 0px; color: #EEE;}
+.checker, .chess{background-size: 100px 100px;}
+.third{width: 33%; max-width: 33%; display: inline-block; overflow: hidden;}
+/*Mobile*/
+@media (max-width: 1024px){
+  .third{float: left;}
+}
+
+.sticky{position: absolute; top: 0px; left: 0px; display: inline-block; padding-left: 20px; z-index: 1000;}
+/*Mobile*/
+@media (max-width: 1024px){
+  .sticky{display: none;}
+}
+
+#mountain, #mountain-bright{background-repeat: repeat-x; background-size: cover;}
+#mountain{background-image: url('../images/mountain.jpg');}
+#mountain-bright{background-image: url('../images/mountain_bright.jpg');}
+#mountain pre, #mountain-bright pre{background: none; text-align: left; display: inline-block; border: none; font-weight: bold;}
+#mountain pre{color: white;}
+#mountain-bright pre{color: #fff;}
+#snow, #rain{width: 100%; font-size: 2.5em; text-align: center; padding: 1.0em 0px;}
+#snow{background-image: url('../images/snow_bg.png');}
+#rain{background-image: url('../images/rain_bg.png');}
+#rain, #rain pre{color: #00557C;}
+
+/*Mobile Specific*/
+@media screen and (max-width: 1024px){
+  #footer{text-align: center;}
+  .sticky{position: relative;}
+  #mountain pre, #mountain-bright pre{white-space: pre-wrap;}
+  #snow pre:nth-child(even), #rain pre:nth-child(even){max-width: 40%; white-space: pre-wrap;}
+  #snow pre:nth-child(odd), #rain pre:nth-child(odd){max-width: 60%; white-space: pre-wrap;}
+}
+@media screen and (max-width: 1024px) and (orientation: portrait){
+  #snow pre:nth-child(even), #rain pre:nth-child(even){width: 100%; max-width: 100%; white-space: pre-wrap; float: left;}
+  #snow pre:nth-child(odd), #rain pre:nth-child(odd){width: 100%; max-width: 100%; white-space: pre-wrap; float: left;}
+}
