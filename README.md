@@ -8,7 +8,7 @@ This place is for emotion plant！
 >http://lvlongtao.github.io/chaochao/map/
 
 ##For my sorry for her:
->http://lvlongtao.github.io/chaochao/map/llovechao
+>http://lvlongtao.github.io/chaochao/llovechao
 
 ##For an report test
->http://lvlongtao.github.io/chaochao/map/report.html
+>http://lvlongtao.github.io/chaochao/report.html
